@@ -1,19 +1,37 @@
-# Contributing Guide
+# Contributing
 
-Welcome to contribute to Rbatis-Plus!
+## Choose the right repository first
 
-## Submit a PR
+Submit bugs, features, and documentation changes to the repository that owns the capability. Change this Pages site only for cross-project catalogs, navigation, or organization-level guidance.
 
-1. Fork the target repository
-2. Create a feature branch (`git checkout -b feat/xxx`)
-3. Commit changes (`git commit -m "feat: xxx"`)
-4. Push (`git push origin feat/xxx`)
-5. Create a Pull Request
+## Suggested workflow
 
-## Report Issues
+1. Read the target README, CONTRIBUTING, AGENTS.md, and license.
+2. Add a test or reproducible case before changing behavior.
+3. Create a focused branch and keep the change to one concern.
+4. Run the repository’s own formatting, static analysis, tests, and build gates.
+5. Describe motivation, boundaries, verification, and compatibility impact in the PR.
 
-Use the [Issues](https://github.com/rbatis-plus) page of the corresponding repository.
+```bash
+git clone https://github.com/rbatis-plus/<repository>.git
+cd <repository>
+git switch -c feat/<short-topic>
+```
 
-## Code of Conduct
+## Common gates
 
-Follow GitHub's community guidelines: professional, inclusive, respectful.
+```bash
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets -- -D warnings
+cargo test --workspace
+```
+
+## Update this site
+
+```bash
+cd rbatis-plus.github.io
+npm install
+npm run docs:build
+```
+
+Do not copy versions or counts into the site unless they are supported by source, manifests, releases, or the current repository state.

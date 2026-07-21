@@ -1,23 +1,28 @@
-# Getting Started
+# Getting started
 
-Welcome to Rbatis-Plus!
+This guide includes only entry points supported by the current repository state. When versions, access, or release status are uncertain, examples explicitly use Git revisions, source builds, or status checks.
 
-## What is this?
+## 1. Pin the alpha dependency
 
-This organization hosts a collection of Rust crates / repositories focused on **[RBatis ORM Enhancement]**.
+The Rust baseline and API can still change, so use an explicit revision.
 
-## How to use
+```toml
+[dependencies]
+rbatis-plus = { git = "https://github.com/rbatis-plus/rbatis-plus", rev = "<commit>" }
+```
 
-1. Browse the [Repositories list](/en/repositories) to see all available projects
-2. Pick the crate you need
-3. Follow the README instructions in each repository for integration
+## 2. Run workspace gates
 
-## Feedback & Support
+The main repository contains core, macros, extension, codegen, and facade crates.
 
-- 🐛 **Bug reports**: [GitHub Issues](https://github.com/rbatis-plus/.github/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/orgs/rbatis-plus/discussions)
-- 📧 **Email**: partmeai@gmail.com
+```bash
+git clone https://github.com/rbatis-plus/rbatis-plus.git
+cd rbatis-plus
+cargo test --workspace
+```
 
----
+## Next steps
 
-> This document is auto-generated. For detailed API, see each repository's README.
+- [Understand how projects relate](/en/guide/ecosystem)
+- [Browse the full repository catalog](/en/repositories)
+- [Prepare a contribution](/en/guide/contributing)

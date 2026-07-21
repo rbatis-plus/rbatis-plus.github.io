@@ -1,23 +1,28 @@
 # 快速开始
 
-欢迎使用 Rbatis-Plus！
+这里仅提供已经能从当前仓库状态证明的入口。版本、权限或发布状态不确定时，示例会明确使用 Git revision、源码构建或状态检查。
 
-## 这是什么？
+## 1. 锁定 alpha 依赖
 
-本组织托管一组 Rust crate / 仓库，专注于 **[RBatis ORM 增强生态]**。
+当前 Rust 基线与 API 都可能变化，建议使用明确 revision。
 
-## 如何使用
+```toml
+[dependencies]
+rbatis-plus = { git = "https://github.com/rbatis-plus/rbatis-plus", rev = "<commit>" }
+```
 
-1. 浏览 [仓库列表](/repositories) 查看所有可用项目
-2. 选择你需要的 crate
-3. 按照各仓库 README 的说明集成到你的项目
+## 2. 运行工作区门禁
 
-## 反馈与支持
+主仓库包含 core、macros、extension、codegen 与 facade。
 
-- 🐛 **Bug 反馈**：[GitHub Issues](https://github.com/rbatis-plus/.github/issues)
-- 💬 **讨论与提案**：[GitHub Discussions](https://github.com/orgs/rbatis-plus/discussions)
-- 📧 **邮件**：partmeai@gmail.com
+```bash
+git clone https://github.com/rbatis-plus/rbatis-plus.git
+cd rbatis-plus
+cargo test --workspace
+```
 
----
+## 下一步
 
-> 本文档是自动生成的。详细 API 请参考各仓库的 README。
+- [理解项目之间的关系](/guide/ecosystem)
+- [查看完整仓库目录](/repositories)
+- [准备贡献](/guide/contributing)
